@@ -1,0 +1,28 @@
+manter o isolamento total do core
+única camada externa para a aplicação
+divisão modular fisicamente por: 
+	packages com config, 
+	entrypoint (containers - docker-compose.yaml)
+	dataprovider.
+
+Simple Clean Architecture
+
+	Core:
+		Use Cases, Entities, Dataprovider
+	Entrypoint:
+		Databases, API's, File System - estão relacionados ao Dataprovider do Core
+		Beans, Database e Framework - estão relacionados às configurações entre o Entrypoint relacionado aos Uses Cases e Dataprovider
+		REST, Queue e Jobs - estão relacionaso aos Uses Cases.
+
+Aplication									Core
+	dataprovider								dataprovider
+		@javax.inject.Named-----------------------> <<interface>> 	
+		UserRepositoryImpl							 UserRepository
+														  ^	
+	entrypoints									usecases  |	
+		<<interface>> 								@javax.inject.Named
+		UserRestController							RegisterUserUseCaseImpl
+			 ^											 |	
+			 |											 v	
+		UserRestController------------------------> <<interface>>
+													RegisterUserUseCase
