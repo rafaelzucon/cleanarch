@@ -14,16 +14,16 @@ Entrypoint:
 	Beans, Database e Framework - estão relacionados às configurações entre o Entrypoint relacionado aos Uses Cases e Dataprovider
 	REST, Queue e Jobs - estão relacionaso aos Uses Cases.
 
-Aplication									Core
-dataprovider								dataprovider
-@javax.inject.Named-----------------------> <<interface>> 	
-UserRepositoryImpl							 UserRepository
+Aplication				   Core
+dataprovider				    dataprovider
+@javax.inject.Named---------------------->  <<interface>> 	
+UserRepositoryImpl			    UserRepository
                                                      ^
                                                      |
-entrypoints									usecases |
-<<interface>> 								@javax.inject.Named
-UserRestController							RegisterUserUseCaseImpl
-      ^											 |	
-      |											 v	
+entrypoints				    usecases |
+<<interface>> 				    @javax.inject.Named
+UserRestController			    RegisterUserUseCaseImpl
+      ^                                          |	
+      |						 v	
 UserRestController------------------------> <<interface>>
                                            RegisterUserUseCase
