@@ -16,12 +16,12 @@ Entrypoint:
 
 Aplication				   Core
 dataprovider				    dataprovider
-@javax.inject.Named---------------------->  <<interface>> 	
+@injeçãoDependencias--------------------->  <<interface>> 	
 UserRepositoryImpl			    UserRepository
                                                      ^
                                                      |
 entrypoints				    usecases |
-<<interface>> 				    @javax.inject.Named
+<<interface>> 				    @@injeção de dependências
 UserRestController			    RegisterUserUseCaseImpl
       ^                                          |	
       |						 v	
